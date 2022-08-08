@@ -3,6 +3,7 @@ package com.example.battleshipbackendspring.repository;
 import com.example.battleshipbackendspring.model.Game;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
+
 import java.util.List;
 
 public interface GameRepository extends MongoRepository<Game,String> {

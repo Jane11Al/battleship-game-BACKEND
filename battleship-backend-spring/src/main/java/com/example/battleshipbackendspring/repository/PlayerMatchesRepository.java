@@ -8,4 +8,5 @@ public interface PlayerMatchesRepository extends MongoRepository<PlayerMatches,S
     PlayerMatches findByPlayer1(String player1);
 
     PlayerMatches findByWebSocketAddress(String webSocketAddress);
+
 }

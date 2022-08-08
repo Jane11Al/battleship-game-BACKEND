@@ -4,6 +4,7 @@ package com.example.battleshipbackendspring.model;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.SneakyThrows;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Id;
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ import java.util.Random;
 
 @Data
 @NoArgsConstructor
-
+@Document(collection = "Game")
 public class Game {
 
     /**

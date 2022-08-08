@@ -3,6 +3,7 @@ package com.example.battleshipbackendspring.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Id;
 
@@ -12,6 +13,7 @@ import javax.persistence.Id;
 
 @Data
 @NoArgsConstructor
+@Document(collection = "PlayerMatches")
 public class PlayerMatches {
 
     /**

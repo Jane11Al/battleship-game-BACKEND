@@ -33,6 +33,9 @@ public class GameDTO {
 
     List<Integer> attackedByEnemyCoordinates;
 
+    /**
+     * Boolean whether enemy cell contains or not ship
+     */
     HashMap<Integer,Boolean> attackedCoordinates;
 
 

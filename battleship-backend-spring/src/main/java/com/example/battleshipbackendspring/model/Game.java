@@ -23,7 +23,7 @@ public class Game {
     /**
      * This is not primary key. This is randomly generated for every game
      */
-    private UUID userId;
+    private String userId;
 
     @Id
     private String userName;
@@ -45,7 +45,7 @@ public class Game {
      * @param userId - it is given in controller
      * @param userName - this is caught from frontend
      */
-    public Game(UUID userId,String userName){
+    public Game(String userId,String userName){
         this.userId=userId;
         this.userName = userName;
         this.attackedShips=0;
@@ -75,7 +75,7 @@ public class Game {
      * @param wonGames - it is accessed by controller
      * @param lostGames - it is accesses by controller
      */
-    public Game(UUID userId,String userName,int wonGames,int lostGames){
+    public Game(String userId,String userName,int wonGames,int lostGames){
         this.userId=userId;
         this.userName=userName;
         this.attackedShips=0;

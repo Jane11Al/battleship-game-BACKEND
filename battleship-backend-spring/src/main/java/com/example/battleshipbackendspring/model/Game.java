@@ -9,7 +9,6 @@ import javax.persistence.Id;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.UUID;
 
 /**
  * This is a class which represents instance of game. It initializes board with random ship positions.
@@ -18,6 +17,7 @@ import java.util.UUID;
 
 @Data
 @NoArgsConstructor
+
 public class Game {
 
     /**

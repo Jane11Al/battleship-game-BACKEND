@@ -1,4 +1,4 @@
-package com.example.battleshipbackendspring.logics;
+package com.example.battleshipbackendspring.logic;
 
 import com.example.battleshipbackendspring.model.*;
 
@@ -30,8 +30,7 @@ public class GameConversion {
             /**
              * Checking if someone won
              */
-
-            Collection<Boolean> shipAttackedCells = gameDTO.getAttackedCoordinates().values();
+            Collection<Boolean> shipAttackedCells = gameDTO.getAttackedCoordinates().values(); //only get bool values from HashMap
             Iterator<Boolean> shipAttackedCellsIterator = shipAttackedCells.iterator();
             while(shipAttackedCellsIterator.hasNext()){
                 if(shipAttackedCellsIterator.next()) positiveAttacks++;

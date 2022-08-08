@@ -31,6 +31,9 @@ public class BoardCell {
      */
     private ShipName shipName;
 
+    /**
+     * if cell belongs to surrounding of ship
+     */
     private boolean greyArea;
 
     /**

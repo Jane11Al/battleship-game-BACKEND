@@ -5,9 +5,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.SneakyThrows;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.persistence.Id;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
@@ -91,6 +94,7 @@ public class Game {
             add(new Ship(2, ShipName.DESTROYER));
             add(new Ship(1, ShipName.ATTACKER));
         }};
+
         for (Ship ship : ships) {
             setRandomPositions(board, ship);
         }
@@ -127,6 +131,7 @@ public class Game {
                 ship.getCoordinates()[i] = (x+i) * 10 + y;
                 oneCell = board.getBoardCells()[x+i][y];
                 oneCell.setContainsShip(true);
+                oneCell.setShipName(ship.getShipName());
 
                 for (int j = 0; j<3; j++) {
                     for (int k = 0; k<3; k++) {
@@ -144,6 +149,7 @@ public class Game {
                 ship.getCoordinates()[i]=x*10+(y+i);
                 oneCell=board.getBoardCells()[x][y+i];
                 oneCell.setContainsShip(true);
+                oneCell.setShipName(ship.getShipName());
 
                 for(int j=0;j<3;j++){
                     for(int k=0;k<3;k++){
@@ -158,7 +164,7 @@ public class Game {
             }
         }
 
-        oneCell.setShipName(ship.getShipName());
+
 
     }
 
@@ -235,5 +241,7 @@ public class Game {
 
         return  false;
     }
+
+
 
 }

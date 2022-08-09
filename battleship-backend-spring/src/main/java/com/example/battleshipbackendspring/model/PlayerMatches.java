@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Id;
+import java.util.UUID;
 
 /**
  * This class persists in MongoDB
@@ -52,6 +53,7 @@ public class PlayerMatches {
      * @param player1
      */
     public PlayerMatches(String player1) {
+        webSocketAddress = UUID.randomUUID().toString();
         this.player1 = player1;
     }
 

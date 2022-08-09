@@ -34,4 +34,30 @@ public class GameServiceImpl implements GameService {
 
         return statistic;
     }
+
+    @Override
+    public Game getGameByUserName(String username) {
+        Game game = null;
+
+        if(gameRepository.existsByUserName(username)){
+            game = gameRepository.findFirstByUserName(username);
+            game = new Game(null, game.getUserName(),game.getWonGames(),game.getLostGames());
+        }else{
+            game = new Game(null,username);
+        }
+
+        return game;
+    }
+
+    @Override
+    public void saveGame(Game game) {
+        gameRepository.save(game);
+    }
+
+    @Override
+    public Game getGameByUserId(String userId) {
+        return gameRepository.findByUserId(userId);
+    }
+
+
 }

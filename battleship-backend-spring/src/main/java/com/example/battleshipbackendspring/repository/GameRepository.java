@@ -18,6 +18,8 @@ public interface GameRepository extends MongoRepository<Game,String> {
 
      boolean existsByUserName(String userName);
 
-     Game findByUserName(String userName);
+     Game findOneByUserName(String userName);
+
+    Game findFirstByUserName(String userName);
 
 }

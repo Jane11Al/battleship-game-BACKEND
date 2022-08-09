@@ -113,4 +113,28 @@ public class GameController {
     }
 
 
+    /**
+     * This endpoint is used to create game and table for second player.
+     * When the URL (which is generated when player 1 created game) is called in second browser
+     * @param userName
+     * @param socketUrl
+     * @return
+     */
+    @RequestMapping("/playWithEnemy/{userName}/{socketUrl}")
+    public GameDTO createPlayer2(@PathVariable String userName,@PathVariable String socketUrl){
+        GameDTO gameDTO=new GameDTO(UUID.randomUUID().toString(),userName);
+
+        Game game = gameService.getGameByUserName(userName);
+        game.setUserId(gameDTO.getUserId());
+
+        gameDTO = GameConversion.convertGameInstance(gameDTO,game);
+        gameService.saveGame(game);
+
+        PlayerMatches playerMatches = playerMatchesService.findBySockId(socketUrl);
+        playerMatches.setPlayer2(gameDTO.getUserId());
+        playerMatchesService.savePlayerMatches(playerMatches);
+        return gameDTO;
+    }
+
+
 }

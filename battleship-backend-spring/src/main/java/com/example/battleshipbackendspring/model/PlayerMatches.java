@@ -3,9 +3,9 @@ package com.example.battleshipbackendspring.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.Id;
 import java.util.UUID;
 
 /**
@@ -53,7 +53,6 @@ public class PlayerMatches {
      * @param player1
      */
     public PlayerMatches(String player1) {
-        webSocketAddress = UUID.randomUUID().toString();
         this.player1 = player1;
     }
 

@@ -26,7 +26,7 @@ Models which are stored in MongoDB are:
 
 ## Controller
 
-The controller is responsible for communicating with the front-end via websockets and REST calls. There are two controllers in this project:
+The controller is responsible for communicating with the frontend via websockets and REST calls. There are two controllers in this project:
 
 **GameController** 
 

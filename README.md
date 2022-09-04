@@ -17,11 +17,11 @@ Unfortunately, the frontend was never finished.
 
 ## Model
 
-This project follows MVC pattern. The model `model` package contains all models (both persistant models and DTOs).
-The models which are stored in MongoDB are:
+This project follows MVC pattern. The `model` package contains all models (both persistant models and DTOs).
+Models which are stored in MongoDB are:
 
     i. Game - contains all data which is used in one game, and also logic for setting ships
-    ii. PlayerMatches - contains two player playing the game and their unique socket id
+    ii. PlayerMatches - contains two players playing the game and their unique socket id
 
 
 ## Controller
@@ -40,6 +40,7 @@ The controller is responsible for communicating with the front-end via websocket
 **WebController**
     
 Responsible for communication between the web-apps via websocket. It primarily has just one method, the processMessageFromClient(). It is responsible for all the communication between the clients. Both the clients are subscribed to this socket and send all the information, such as whether the player board is initialized or if the player has taken her turn, etc. Both the client subscribe to the same socket.
+
 ## Other
 Project contains `repository` package which is used for storing data in MongoDB.
 `config` package contains class for further socket configuration (configuring MessageBroker and StompEndpoint)

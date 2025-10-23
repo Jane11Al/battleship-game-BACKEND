@@ -1,4 +1,3 @@
-Добрый вечер
 # Battleship-game-BACKEND
 
 Backend developed for web-based multiplayer game Battleship that uses Spring. MongoDB was used for storing the data. Clients were supposed to communicate via Websockets.
